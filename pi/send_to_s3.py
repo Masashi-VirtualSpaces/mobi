@@ -8,8 +8,8 @@ pin = 7
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin, GPIO.OUT)
 
-AWS_ACCESS = 'AKIAIAUIZA7BCAAXQLIQ'
-AWS_SECRET = '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'
+AWS_ACCESS = ''
+AWS_SECRET = ''
 
 conn = S3Connection(AWS_ACCESS,AWS_SECRET)
 bucket = conn.get_bucket('be.wapptastic')
