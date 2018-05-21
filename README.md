@@ -17,4 +17,4 @@ in order to connect to s3 you must also create a file called credentials.json in
 }
 
 ```
-the file must be named and formatted correctly for the .gitignoreand functions to recognize it.
+the file must be named and formatted correctly for the .gitignore and other functions to recognize it.
