@@ -2,8 +2,6 @@
 Masashi 5/20/18
 Use this file to create a script that initializes AWS credentials and sets up a connection to 
 the AWS IoT Dashboard.
-
-
 '''
 import json
 import time
@@ -21,7 +19,6 @@ DEVICE_INFO['bucketname'] = bucket_name
 #Add blank spot for AWS Credentials
 DEVICE_INFO['ACCESS_KEY_ID']=""
 DEVICE_INFO['AWS_SECRET_KEY']=""
-
 
 out_file = open("../credentials.json","w")
 json.dump(DEVICE_INFO,out_file, indent=4)                                  
