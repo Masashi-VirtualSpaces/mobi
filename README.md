@@ -1,14 +1,11 @@
 # mobi
 Repo for IoT 2018 class parking project.
-
-
 In order to connect to your s3 bucket you need to first run the files in this order...
 
 pi_setup.py
-create_bucket.py
-add_to_bucket.py
+main.py
 
-in order to connect to s3 you must also create a file called credentials.json in the root directory with the content structure:
+in order to connect to s3 you must also add your AWS credentials to a file called credentials.json in the root directory in the fields:
 ```json
 
 {
