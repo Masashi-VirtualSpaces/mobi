@@ -14,7 +14,7 @@ with open('../credentials.json') as credentials:
     ACCESS_KEY_ID = info['ACCESS_KEY_ID']
     AWS_SECRET_KEY = info['AWS_SECRET_KEY']
 
-with open('device_info.json') as json_file:  
+with open('device_info.json') as json_file:
     DEVICE_INFO = json.load(json_file)
 
 print(DEVICE_INFO)

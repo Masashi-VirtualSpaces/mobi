@@ -43,6 +43,8 @@ print("Bucket List: %s" % buckets)
 if DEVICE_INFO['bucket_name'] not in buckets:
     now = time.time()
     new_bucket = DEVICE_INFO['bucket_name']+str(now)
+    print(new_bucket)
+    
     s3.create_bucket(Bucket=new_bucket,CreateBucketConfiguration={
         'LocationConstraint': 'us-west-2'})
     

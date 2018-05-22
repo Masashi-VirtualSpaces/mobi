@@ -6,16 +6,23 @@ the AWS IoT Dashboard.
 
 '''
 import json
+import time
 
 DEVICE_INFO={}
 
-name = input("What is the device name?\n")
-DEVICE_INFO['name']=name
+#configure name
+name = input("What is the device id?\n")
+DEVICE_INFO['id']=name
 
-bucket_name = input("What is the bucketname?\n")
-DEVICE_INFO['bucket_name'] = bucket_name
+#configure bucket name
+bucket_name = name+str(time.time())
+DEVICE_INFO['bucketname'] = bucket_name
+
+#Add blank spot for AWS Credentials
+DEVICE_INFO['ACCESS_KEY_ID']=""
+DEVICE_INFO['AWS_SECRET_KEY']=""
 
 
-out_file = open("device_info.json","w")
+out_file = open("../credentials.json","w")
 json.dump(DEVICE_INFO,out_file, indent=4)                                  
 out_file.close()
