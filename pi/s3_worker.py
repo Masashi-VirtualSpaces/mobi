@@ -46,3 +46,4 @@ class s3_worker:
             print("Adding file: ",key)
             self.s3.upload_fileobj(data, self.DEVICE_BUCKET, key)
             print("file added")
+            return key
