@@ -25,6 +25,7 @@ spaces = [{"origin_x": 190, "origin_y": 45, "id": 0},
     {"origin_x": 946, "origin_y": 335, "id": 13}]
 cars_detected = [];
 cascade_src = 'cars.xml'
+# Put the name of the image you want to process here
 img_src = 'half_full.jpg'
 #video_src = 'dataset/video2.avi'
 
