@@ -1,6 +1,13 @@
 import cv2
+# -*- coding: utf-8 -*-
+
+# This is proof-of-concept code for the Mobi Parking Project
+# adapted from GitHub User andrewssobral's haarcascades vehicle detection program
+# Last Edit: 6/3/2018 by Ross Hartley
 
 def vehicle_detection():
+	print(cv2.__version__)
+
 	SPOT_W = 126
 	SPOT_H = 255
 	spaces = [{"origin_x": 190, "origin_y": 45, "id": 0},
@@ -19,15 +26,15 @@ def vehicle_detection():
 	    {"origin_x": 946, "origin_y": 335, "id": 13}]
 	cars_detected = [];
 	cascade_src = 'cars.xml'
+	# Put the name of the image you want to process here
 	img_src = 'half_full.jpg'
 	#video_src = 'dataset/video2.avi'
 
 	img = cv2.imread(img_src)
 	car_cascade = cv2.CascadeClassifier(cascade_src)
-	'''
-	cv2.imshow('ImageWindow', img)
-	cv2.waitKey(0)
-	'''
+	#cv2.imshow('ImageWindow', img)
+	#cv2.waitKey(0)
+
 	#while True:
 	#ret, img = cap.read()
 	if (type(img) == type(None)):
@@ -38,7 +45,7 @@ def vehicle_detection():
 	cars = car_cascade.detectMultiScale(gray, 1.1, 1)
 
 	for (x,y,w,h) in cars:
-	    cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
+	    #cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
 	    centroidx = x+h/2
 	    centroidy = y+h/2
 	    newCar = {"cx": centroidx, "cy": centroidy}
@@ -55,14 +62,11 @@ def vehicle_detection():
 	# Tell how many spaces are empty
 	print("Number of Empty Spaces: %d" % (14 - numFilled))
 
-	'''
-	cv2.imshow('DetectionWindow', img)
-	cv2.waitKey(0)
+	#cv2.imshow('DetectionWindow', img)
+	#cv2.waitKey(0)
 	# If user presses esc, close window
-	if cv2.waitKey() == 27:
-	    cv2.destroyAllWindows()
-	'''
-
+	#if cv2.waitKey() == 27:
+	 #   cv2.destroyAllWindows()
 
 def lambda_handler(event, context):
 	print "OpenCV installed version:", cv2.__version__
