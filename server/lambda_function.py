@@ -27,7 +27,7 @@ def vehicle_detection():
 	cars_detected = [];
 	cascade_src = 'cars.xml'
 	# Put the name of the image you want to process here
-	img_src = 'half_full.jpg'
+	img_src = 'parkinglot.jpg'
 	#video_src = 'dataset/video2.avi'
 
 	img = cv2.imread(img_src)
