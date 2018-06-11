@@ -20,7 +20,7 @@ mys3_worker = s3_worker.s3_worker("../credentials.json")
 mys3_worker.create_bucket()
 while(start!=6):
     now = time.time()
-    filename = "test"+str(now+".jpg")
+    filename = "test"+str(now)+".jpg"
     newimage = command+filename
     test = subprocess.getoutput(newimage)
     print(test)
