@@ -48,3 +48,6 @@ class s3_worker:
             self.s3.upload_fileobj(data, self.DEVICE_BUCKET, key)
             print("file added")
             return key
+
+    def get_object(self):
+        
