@@ -11,17 +11,17 @@ class s3_worker:
         
         with open('../credentials.json') as credentials:
             info = json.load(credentials)
-            try:
-                self.DEVICE_ID = info['id']
-                self.DEVICE_BUCKET = info['bucketname']
+            
+            self.DEVICE_ID = info['id']
+            self.DEVICE_BUCKET = info['bucketname']
 
-        print(self.DEVICE_BUCKET)
-        print(self.DEVICE_ID)
-        self.s3 = boto3.client(
-            's3',
-            aws_access_key_id=info['ACCESS_KEY_ID'],
-            aws_secret_access_key=info['AWS_SECRET_KEY']
-        )
+            print(self.DEVICE_BUCKET)
+            print(self.DEVICE_ID)
+            self.s3 = boto3.client(
+                's3',
+                aws_access_key_id=info['ACCESS_KEY_ID'],
+                aws_secret_access_key=info['AWS_SECRET_KEY']
+            )
         #add dynamoDB worker
 
     def create_bucket(self):
