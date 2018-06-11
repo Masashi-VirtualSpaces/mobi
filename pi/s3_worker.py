@@ -11,8 +11,9 @@ class s3_worker:
         
         with open('../credentials.json') as credentials:
             info = json.load(credentials)
-            self.DEVICE_ID = info['id']
-            self.DEVICE_BUCKET = info['bucketname']
+            try:
+                self.DEVICE_ID = info['id']
+                self.DEVICE_BUCKET = info['bucketname']
 
         print(self.DEVICE_BUCKET)
         print(self.DEVICE_ID)
@@ -48,3 +49,4 @@ class s3_worker:
             self.s3.upload_fileobj(data, self.DEVICE_BUCKET, key)
             print("file added")
             return key
+
