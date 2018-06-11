@@ -5,7 +5,7 @@ import os
 
 class s3_worker:
     '''
-    ABOUT:
+    ABOUT: Worker used to interface with the bucket associated to the device.
     '''
     def __init__(self, credential_file):
         
@@ -21,6 +21,7 @@ class s3_worker:
             aws_access_key_id=info['ACCESS_KEY_ID'],
             aws_secret_access_key=info['AWS_SECRET_KEY']
         )
+        #add dynamoDB worker
 
     def create_bucket(self):
         response = self.s3.list_buckets()
