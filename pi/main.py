@@ -12,13 +12,13 @@ import time
 
 
 
-command = "fswebcam --no-banner ./images/"
+command = "fswebcam -r 1280x1024 --no-banner ./images/"
 #test"
 #jpg"
 start = 0
 mys3_worker = s3_worker.s3_worker("../credentials.json")
 mys3_worker.create_bucket()
-while(start!=6):
+while(1):
     now = time.time()
     filename = "test"+str(now)+".jpg"
     newimage = command+filename
@@ -28,7 +28,7 @@ while(start!=6):
     print("MY KEY: ",key)
     start += 1
     
-    time.sleep(10)
+    time.sleep(20)
 
 
 #Code for DynamoDb BELOW

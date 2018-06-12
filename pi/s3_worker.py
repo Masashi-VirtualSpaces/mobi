@@ -44,7 +44,7 @@ class s3_worker:
             #grab file at end of path
             file_name = os.path.basename(file_path)
             now = time.time()
-            key = file_name+':'+str(now)+'.png'
+            key = file_name
             print("Adding file: ",key)
             self.s3.upload_fileobj(data, self.DEVICE_BUCKET, key)
             print("file added")
