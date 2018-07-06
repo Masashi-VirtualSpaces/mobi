@@ -28,7 +28,7 @@ while(1):
     print("MY KEY: ",key)
     start += 1
     
-    time.sleep(10)
+    time.sleep(200)
 
 
 #Code for DynamoDb BELOW
